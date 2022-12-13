@@ -1,0 +1,46 @@
+package com.dw.member.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="dw_member") //테이블 이름은 소문자로 
+public class Member {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column
+	private long id;	// pk
+	
+	@Column
+	private String name;	//멤버이름
+	
+	@Column
+	private int age;	//나이
+	
+	public long getId() {
+		return id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
+	
+
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	
+}
