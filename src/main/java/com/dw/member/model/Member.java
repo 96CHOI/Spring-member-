@@ -9,52 +9,35 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 @Entity
-@Table(name="dw_member") //테이블 이름은 소문자로 
+@Table(name = "dw_member") // 테이블 이름은 소문자로
 public class Member {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column
-	private long id;	// pk
-	
+	private long id; // pk
+
+	@Column(length = 30)
+	private String name; // 멤버이름
+
 	@Column
-	private String name;	//멤버이름
-	
+	private int age; // 나이
+
+	@Column(length = 40)
+	private String userId;
+
 	@Column
-	private int age;	//나이
-	
+	private String userPassword;
+
 	// @JoinColumn => member 테이블에 dept_id라는 컬럼(FK)생성
 	@ManyToOne
 	@JoinColumn(name = "dept_id")
-	private Dept dept; 
-	
-	
-	public Dept getDept() {
-		return dept;
-	}
-	public void setDept(Dept dept) {
-		this.dept = dept;
-	}
-	public long getId() {
-		return id;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public void setId(long id) {
-		this.id = id;
-	}
-	
+	private Dept dept;
 
-	public int getAge() {
-		return age;
-	}
-	public void setAge(int age) {
-		this.age = age;
-	}
-	
 }

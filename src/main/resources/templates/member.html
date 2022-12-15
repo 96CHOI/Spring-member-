@@ -1,296 +1,305 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>member select</title>
-<style>
-body{
-	background-color: black;
-	margin: 0;
-	padding: 0;
-    box-sizing: border-box;
-}
+  <head>
+    <meta charset="UTF-8" />
+    <title>member select</title>
+    <style>
+      body {
+        background-color: black;
+        margin: 0;
+        padding: 0;
 
-h1 {
-	width: 1200px;
-	height: 130px;
-	margin: 0 auto;
-	text-align: center;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	color: white;
-}
-#all{
-	width: 1400px;
-    margin: 0 auto;
-	display: flex;
-}
-#sub{
-	width: 200px;
-	height: 800px;
-	margin: 0 auto;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-}
-#tab{
-	width: 1000px;
-	height: 800px;
-	margin: 0 auto;
-	display: flex;
-	flex-direction: column;
-    justify-content: flex-start;
-}
-h3 {
-	width: 200px;
-	margin: 0 auto;
-	text-align: center;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	color: white;
-}
-input{
-	text-align: center;
-}
-#select{
-	width: 200px;
-    height: 200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    border: 3px solid white;
-}
-#select input{
-	color: black;
-	background: white;
-}
-#insert{
-	width: 200px;
-    height: 250px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    border: 3px solid white;
-    border-top:0px;
-}
-#update{
-	width: 200px;
-    height: 150px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    border: 3px solid white;
-    border-top:0px;
-}
-#delete{
-	width: 200px;
-	height: 120px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    border: 3px solid white;
-    border-top:0px;
-}
-table {
-	font-family: arial, sans-serif;
-	border-collapse: collapse;
-	width: 1000px;
-	height: 100px;
-	margin: 0 auto;
-	color: white;
-}
+        box-sizing: border-box;
+      }
 
-td, th {
-	text-align: center;
-	border-radius: 20px;
-	padding: 8px;
-	text-decoration: none;
-}
+      h1 {
+        width: 1200px;
+        height: 130px;
+        margin: 0 auto;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+      #all {
+        width: 1400px;
+        margin: 0 auto;
+        display: flex;
+      }
+      #sub {
+        width: 200px;
+        height: 800px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      #tab {
+        width: 1000px;
+        height: 800px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+      h3 {
+        width: 200px;
+        margin: 0 auto;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+      input {
+        text-align: center;
+      }
+      #select {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        border: 3px solid white;
+      }
+      #select input {
+        color: black;
+        background: white;
+      }
+      #insert {
+        width: 200px;
+        height: 250px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        border: 3px solid white;
+        border-top: 0px;
+      }
+      #update {
+        width: 200px;
+        height: 150px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        border: 3px solid white;
+        border-top: 0px;
+      }
+      #delete {
+        width: 200px;
+        height: 120px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        border: 3px solid white;
+        border-top: 0px;
+      }
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 1000px;
+        height: 100px;
+        margin: 0 auto;
+        color: white;
+      }
 
+      td,
+      th {
+        text-align: center;
+        border-radius: 20px;
+        padding: 8px;
+        text-decoration: none;
+      }
 
-th{
-background-color: #747474;
-}
-td{
-background-color: #A6A6A6;
-}
-tr:hover{
-	cursor:pointer;
-}
-button:hover{
-	cursor:pointer;
-}
-a{
-	text-decoration: none;
-	color: white;
-}
-</style>
-</head>
-<body>
-	<!-- 사원목록 구현하기 -->
-	<h1><a href="http://dnbcode.dev.s3-website.ap-northeast-2.amazonaws.com/member.html" target="_blank"
-	onclick="window.open(this.href, '_blank', 'width=800, height=800');"> 🏦member 정보🏦</a></h1>
-			
-	<div id="all">
-		<div id="sub">
-			<!-- 사원 상세 정보 -->
-			<div id="select">
-			<h3 style="color : white">멤버 정보 조회</h3>
-				<input id="id" type="text" disabled="disabled" placeholder="멤버 순번">
-				<input id="name" type="text" disabled="disabled" placeholder="멤버 이름">
-				<input id="age" type="text" disabled="disabled" placeholder="멤버 나이">
-				<input id="dept" type="text" disabled="disabled" placeholder="소속 부서">
-			</div>
-			<!-- 사원 추가 -->
-			<div id="insert">
-			<h3>*멤버 추가*</h3>
-				<input id="i_id" type="text" placeholder="멤버순번을 입력해주세요." />
-				<input id="i_name" type="text" placeholder="멤버이름을 입력해주세요." />
-				<input id="i_age" type="text" placeholder="멤버나이를 입력해주세요." />
-				<button type="button" onclick="join()">멤버 추가</button>
-			</div>
-			<div id="update">
-			<h3>*멤버 정보 수정*</h3>
-				<input id="u_id" type="text" placeholder="멤버순번을 입력해주세요....">
-				<input id="u_name" type="text" placeholder="멤버이름을 입력해주세요....">
-				<input id="u_age" type="text" placeholder="멤버나이를 입력해주세요....">
-				<button type="button" onclick="doUpdate()">멤버 정보 수정</button>
-			</div>
-			<div id="delete">
-			<h3>*멤버 삭제*</h3>
-				<input id="d_id" type="text" placeholder="멤버번호를 입력해주세요....">
-				<button type="button" onclick="doDelete()">멤버 삭제</button>
-			</div>
-		</div>
-		<div id="tab">
-			<table id="member">
-				<tr>
-					<th>순번</th>
-					<th>이름</th>
-					<th>나이</th>
-					<th>부서</th>
-				</tr>
-			
-			</table>
-		</div>
-	</div>
-</body>
-<script src="https://code.jquery.com/jquery-3.6.1.js"
-	integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
-	crossorigin="anonymous"></script>
-	
-<script type="text/javascript">
-	function getId(id){
-		$.ajax({
-			url : '/member/'+id,
-			type : 'GET',
-			dataType : 'json',
-			success : function(response) {
-				$('#id').val(response.id);
-				$('#name').val(response.name);
-				$('#age').val(response.age);
-				$('#dept').val(response.dept.dname);
-			}
-		});
-	}
+      th {
+        background-color: #747474;
+      }
+      td {
+        background-color: #a6a6a6;
+      }
+      tr:hover {
+        cursor: pointer;
+      }
+      button:hover {
+        cursor: pointer;
+      }
+      a {
+        text-decoration: none;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 사원목록 구현하기 -->
+    <h1>
+      <a
+        href="http://dnbcode.dev.s3-website.ap-northeast-2.amazonaws.com/member.html"
+        target="_blank"
+        onclick="window.open(this.href, '_blank', 'width=800, height=800');"
+      >
+        🏦member 정보🏦</a
+      >
+    </h1>
 
-	na = document.getElementById("na");
-	$.ajax({
-		url : '/api/v1/members',
-		type : 'GET',
-		dataType : 'json',
-		success : function(response) {
-			for (var i = 0; i < response.length; i++) {
-				tr = $('<tr onclick="getId('+response[i].id+')"></tr>');
-				id = $('<td>' + response[i].id + '</td>');
-				age = $('<td>' + response[i].age + '</td>');
-				dept = $('<td>' + response[i].dept.dname + '</td>');
-				console.log(response[i])
-				tr.append(id);
-				tr.append($('<td>' + response[i].name + '</td>'));
-				tr.append(age);
-				tr.append(dept);
-				$("#member").append(tr);
-			}
-		}
-	});
-	
-	function join() {
-		var id = $('#i_id').val();
-		var name = $('#i_name').val();
-		var age = $('#i_age').val();
+    <div id="all">
+      <div id="sub">
+        <!-- 사원 상세 정보 -->
+        <div id="select">
+          <h3 style="color: white">멤버 정보 조회</h3>
+          <input id="id" type="text" disabled="disabled" placeholder="멤버 순번" />
+          <input id="name" type="text" disabled="disabled" placeholder="멤버 이름" />
+          <input id="age" type="text" disabled="disabled" placeholder="멤버 나이" />
+          <input id="dept" type="text" disabled="disabled" placeholder="소속 부서" />
+        </div>
+        <!-- 사원 추가 -->
+        <div id="insert">
+          <h3>*멤버 추가*</h3>
+          <input id="i_id" type="text" placeholder="멤버순번을 입력해주세요." />
+          <input id="i_name" type="text" placeholder="멤버이름을 입력해주세요." />
+          <input id="i_age" type="text" placeholder="멤버나이를 입력해주세요." />
+          <button type="button" onclick="join()">멤버 추가</button>
+        </div>
+        <div id="update">
+          <h3>*멤버 정보 수정*</h3>
+          <input id="u_id" type="text" placeholder="멤버순번을 입력해주세요...." />
+          <input id="u_name" type="text" placeholder="멤버이름을 입력해주세요...." />
+          <input id="u_age" type="text" placeholder="멤버나이를 입력해주세요...." />
+          <button type="button" onclick="doUpdate()">멤버 정보 수정</button>
+        </div>
+        <div id="delete">
+          <h3>*멤버 삭제*</h3>
+          <input id="d_id" type="text" placeholder="멤버번호를 입력해주세요...." />
+          <button type="button" onclick="doDelete()">멤버 삭제</button>
+        </div>
+      </div>
+      <div id="tab">
+        <table id="member">
+          <tr>
+            <th>순번</th>
+            <th>이름</th>
+            <th>나이</th>
+            <th>부서</th>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </body>
+  <script
+    src="https://code.jquery.com/jquery-3.6.1.js"
+    integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+    crossorigin="anonymous"
+  ></script>
 
-		var jsonData = {
-			"id" : id,
-			"name" : name,
-			"age" : age,
-		};
+  <script type="text/javascript">
+    function getId(id) {
+      $.ajax({
+        url: '/member/' + id,
+        type: 'GET',
+        dataType: 'json',
+        success: function (response) {
+          $('#id').val(response.id);
+          $('#name').val(response.name);
+          $('#age').val(response.age);
+          $('#dept').val(response.dept.dname);
+        },
+      });
+    }
 
-		$.ajax({
-			url : '/api/v1/member',
-			type : 'POST',
-			contentType : 'application/json', //서버에 json 타입으로 보낼 예정(요청) 
-			data : JSON.stringify(jsonData),
-			dataType : 'json',
-			success : function(response) {
-				console.log(response);
-				alert("멤버 추가 완료");
-				location.reload(); //강제 새로고침
-			}
-		});
-	}
-	
-	function doUpdate(){
-		var id = $('#u_id').val();
-		var name = $('#u_name').val();
-		var age = $('#u_age').val();
-		
-		var jsonData = {
-				"id" : id,
-				"name" : name,
-				"age" : age
-			};
+    na = document.getElementById('na');
+    $.ajax({
+      url: '/api/v1/members',
+      type: 'GET',
+      dataType: 'json',
+      success: function (response) {
+        for (var i = 0; i < response.length; i++) {
+          tr = $('<tr onclick="getId(' + response[i].id + ')"></tr>');
+          id = $('<td>' + response[i].id + '</td>');
+          age = $('<td>' + response[i].age + '</td>');
+          dept = $('<td>' + response[i].dept.dname + '</td>');
+          console.log(response[i]);
+          tr.append(id);
+          tr.append($('<td>' + response[i].name + '</td>'));
+          tr.append(age);
+          tr.append(dept);
+          $('#member').append(tr);
+        }
+      },
+    });
 
-			$.ajax({
-				url : '/member',
-				type : 'PATCH',
-				contentType : 'application/json', //서버에 json 타입으로 보낼 예정(요청) 
-				data : JSON.stringify(jsonData),
-				dataType : 'json',
-				success : function(response) {
-					console.log(response);
-					alert("멤버 정보 수정 완료");
-					location.reload(); //강제 새로고침
-				}
-			});
-	}
-	
-	function doDelete(){
-		// 문제 사원번호 입력을 9999 넘으면 사원번호가 '잘못된 사원번호 입니다.' 라는 alert창 보여주기!
-		// 제이쿼리 : $('#d_empno').val();
-		// 바닐라 스크립트 : document.getElementById('d_empno').value;
-		var id = $("#d_id").val();
-		
-		//사원삭제 ajax연결하기 
-		$.ajax({
-			url : '/member/'+id,
-			type : 'DELETE',
-			dataType : 'json',
-			success : function(response) {
-				alert("멤버 삭제 완료!✋✋");
-				location.reload(); //강제 새로고침
-			}
-		});
-	}
-</script>
+    function join() {
+      var id = $('#i_id').val();
+      var name = $('#i_name').val();
+      var age = $('#i_age').val();
+
+      var jsonData = {
+        id: id,
+        name: name,
+        age: age,
+      };
+
+      $.ajax({
+        url: '/api/v1/member',
+        type: 'POST',
+        contentType: 'application/json', //서버에 json 타입으로 보낼 예정(요청)
+        data: JSON.stringify(jsonData),
+        dataType: 'json',
+        success: function (response) {
+          console.log(response);
+          alert('멤버 추가 완료');
+          location.reload(); //강제 새로고침
+        },
+      });
+    }
+
+    function doUpdate() {
+      var id = $('#u_id').val();
+      var name = $('#u_name').val();
+      var age = $('#u_age').val();
+
+      var jsonData = {
+        id: id,
+        name: name,
+        age: age,
+      };
+
+      $.ajax({
+        url: '/member',
+        type: 'PATCH',
+        contentType: 'application/json', //서버에 json 타입으로 보낼 예정(요청)
+        data: JSON.stringify(jsonData),
+        dataType: 'json',
+        success: function (response) {
+          console.log(response);
+          alert('멤버 정보 수정 완료');
+          location.reload(); //강제 새로고침
+        },
+      });
+    }
+
+    function doDelete() {
+      // 문제 사원번호 입력을 9999 넘으면 사원번호가 '잘못된 사원번호 입니다.' 라는 alert창 보여주기!
+      // 제이쿼리 : $('#d_empno').val();
+      // 바닐라 스크립트 : document.getElementById('d_empno').value;
+      var id = $('#d_id').val();
+
+      //사원삭제 ajax연결하기
+      $.ajax({
+        url: '/member/' + id,
+        type: 'DELETE',
+        dataType: 'json',
+        success: function (response) {
+          alert('멤버 삭제 완료!✋✋');
+          location.reload(); //강제 새로고침
+        },
+      });
+    }
+  </script>
 </html>
