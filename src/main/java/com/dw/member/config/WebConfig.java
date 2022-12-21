@@ -7,7 +7,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 //WebConfig : 웹 설정
 //Config : 설정
-@Configuration
+// 포스트맨에서 확인 하려면 주석처리
+// @Configuration
 public class WebConfig implements WebMvcConfigurer {
 
     @Autowired
